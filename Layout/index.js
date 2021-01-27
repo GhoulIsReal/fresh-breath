@@ -1,2 +1,4 @@
-export * from "./Flex/Flex";
-export * from "./Grid/Grid";
+import Flex from "./Flex/Flex";
+import Grid from "./Grid/Grid";
+
+export { Flex, Grid };
