@@ -1,0 +1,27 @@
+{
+  "name": "fresh-breath",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GhoulIsReal/fresh-breath.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GhoulIsReal/fresh-breath/issues"
+  },
+  "homepage": "https://github.com/GhoulIsReal/fresh-breath#readme",
+  "devDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {
+    "styled-components": "^5.2.1"
+  }
+}
