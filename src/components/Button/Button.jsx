@@ -1,5 +1,5 @@
-import React from "react";
-import * as styled from "./ButtonStyles";
+import React from 'react'
+import * as styled from './ButtonStyles'
 
 function Button({ type, hover, inline, ...props }, ref) {
   return (
@@ -10,7 +10,7 @@ function Button({ type, hover, inline, ...props }, ref) {
       ref={ref}
       {...props}
     />
-  );
+  )
 }
 
-export default React.forwardRef(Button);
+export default React.forwardRef(Button)

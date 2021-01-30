@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const BreadcrumbNav = styled.nav`
   & > ol {
@@ -13,8 +13,12 @@ const BreadcrumbNav = styled.nav`
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     color: #6c757d;
-    content: "/";
+    content: '/';
   }
-`;
+  & > ol > li > a {
+    text-decoration: none;
+    color: #000;
+  }
+`
 
-export { BreadcrumbNav };
+export { BreadcrumbNav }

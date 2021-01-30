@@ -1,8 +1,8 @@
-import React from "react";
-import * as styled from "./AnchorStyles";
+import React from 'react'
+import * as styled from './AnchorStyles'
 
 function isModifiedEvent(event) {
-  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
 }
 
 function Anchor(
@@ -14,6 +14,8 @@ function Anchor(
     underline,
     underlineType,
     target,
+    Extra,
+    size,
     children,
     ...rest
   },
@@ -23,23 +25,33 @@ function Anchor(
     ...rest,
     onClick: (event) => {
       try {
-        if (onClick) onClick(event);
+        if (onClick) onClick(event)
       } catch (ex) {
-        event.preventDefault();
-        throw ex;
+        event.preventDefault()
+        throw ex
       }
       if (
         !event.defaultPrevented &&
         event.button === 0 &&
         navigate &&
-        (!target || target === "_self") &&
+        (!target || target === '_self') &&
         !isModifiedEvent(event)
       ) {
-        event.preventDefault();
-        navigate();
+        event.preventDefault()
+        navigate()
       }
-    },
-  };
+    }
+  }
+
+  const getSize = () => {
+    if (size) {
+      if (size === 'small') return ['17px', '13px']
+      else if (size === 'medium') return ['20px', '16px']
+      else if (size === 'large') return ['24px', '18px']
+      else return ''
+    }
+  }
+
   return (
     <styled.AnchorStyled
       ref={ref}
@@ -48,9 +60,22 @@ function Anchor(
       color={color}
       {...props}
     >
-      {children}
+      {Extra && Extra.Content ? (
+        <styled.IconHolder position={Extra.position}>
+          <Extra.Content />
+        </styled.IconHolder>
+      ) : (
+        ''
+      )}
+      <styled.Text
+        extra={Extra}
+        position={Extra && Extra.position}
+        sidePadding={size && getSize()}
+      >
+        {children}
+      </styled.Text>
     </styled.AnchorStyled>
-  );
+  )
 }
 
-export default React.forwardRef(Anchor);
+export default React.forwardRef(Anchor)

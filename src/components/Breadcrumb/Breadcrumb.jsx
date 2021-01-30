@@ -1,5 +1,5 @@
-import React from "react";
-import * as styled from "./BreadcrumbStyles";
+import React from 'react'
+import * as styled from './BreadcrumbStyles'
 
 function Breadcrumb(props, ref) {
   return (
@@ -12,7 +12,7 @@ function Breadcrumb(props, ref) {
         ))}
       </ol>
     </styled.BreadcrumbNav>
-  );
+  )
 }
 
-export default React.forwardRef(Breadcrumb);
+export default React.forwardRef(Breadcrumb)
