@@ -2,12 +2,11 @@ import React from 'react'
 import * as styled from './CardStyles'
 
 function Card(props, ref) {
-  const { img, heading, paragraph, width } = props
+  const { img, heading, paragraph, width, style } = props
   const order = Object.keys(props)
-  console.log(order)
 
   return (
-    <styled.Holder width={width} ref={ref} {...props}>
+    <styled.Holder width={width} ref={ref} style={style}>
       {order[0] === 'img' ? (
         <styled.Image src={img.url} alt={img.alt} />
       ) : order[0] === 'heading' ? (

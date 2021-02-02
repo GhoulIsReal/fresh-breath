@@ -18,6 +18,7 @@ const BreadcrumbNav = styled.nav`
   & > ol > li > a {
     text-decoration: none;
     color: #000;
+    display: inline-block;
   }
 `
 

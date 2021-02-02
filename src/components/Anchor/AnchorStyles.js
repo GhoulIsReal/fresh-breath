@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const AnchorStyled = styled.a`
+  cursor: pointer;
   display: flex;
   align-items: center;
   width: fit-content;
@@ -18,7 +19,7 @@ const AnchorStyled = styled.a`
     ${(props) =>
       props.underline &&
       `content: ''; position: absolute; bottom: -10px; width: 0px; height: 5px; margin: 5px 0 0; transition: all 0.12s ease-in-out; transition-duration: 0.75s; opacity: 0; background-color: ${
-        props.color
+        props.color || '#000'
       }; ${props.underline === 'left' ? 'right: 0' : 'left: 0'}`}
   }
   &:hover::before,

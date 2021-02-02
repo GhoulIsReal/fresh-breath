@@ -10,8 +10,8 @@ const Button = styled.button`
       ? 'red'
       : props.type === 'success'
       ? 'green'
-      : 'unset'};
-  color: ${(props) => (props.type ? '#fff' : '#000')};
+      : '#ddd'};
+  color: ${(props) => (props.type ? '#fff' : '#123')};
   &:hover {
     ${(props) =>
       props.hover && `transition: 0.25s ease; filter: brightness(0.85);`}

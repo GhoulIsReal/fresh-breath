@@ -12,7 +12,6 @@ function Anchor(
     color,
     hover,
     underline,
-    underlineType,
     target,
     Extra,
     size,
@@ -42,13 +41,14 @@ function Anchor(
       }
     }
   }
-
   const getSize = () => {
     if (size) {
       if (size === 'small') return ['17px', '13px']
       else if (size === 'medium') return ['20px', '16px']
       else if (size === 'large') return ['24px', '18px']
       else return ''
+    } else {
+      return ['20px', '16px']
     }
   }
 
@@ -68,9 +68,10 @@ function Anchor(
         ''
       )}
       <styled.Text
+        size={size}
         extra={Extra}
         position={Extra && Extra.position}
-        sidePadding={size && getSize()}
+        sidePadding={getSize()}
       >
         {children}
       </styled.Text>
