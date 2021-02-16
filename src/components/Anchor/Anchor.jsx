@@ -6,25 +6,14 @@ function isModifiedEvent(event) {
 }
 
 function Anchor(
-  {
-    navigate,
-    onClick,
-    color,
-    hover,
-    underline,
-    target,
-    Extra,
-    size,
-    children,
-    ...rest
-  },
+  { color, hover, underline, target, Extra, size, children, ...rest },
   ref
 ) {
   let props = {
     ...rest,
     onClick: (event) => {
       try {
-        if (onClick) onClick(event)
+        if (rest.onClick) rest.onClick(event)
       } catch (ex) {
         event.preventDefault()
         throw ex
@@ -32,24 +21,20 @@ function Anchor(
       if (
         !event.defaultPrevented &&
         event.button === 0 &&
-        navigate &&
+        rest.navigate &&
         (!target || target === '_self') &&
         !isModifiedEvent(event)
       ) {
         event.preventDefault()
-        navigate()
+        rest.navigate()
       }
     }
   }
   const getSize = () => {
-    if (size) {
-      if (size === 'small') return ['17px', '13px']
-      else if (size === 'medium') return ['20px', '16px']
-      else if (size === 'large') return ['24px', '18px']
-      else return ''
-    } else {
-      return ['20px', '16px']
-    }
+    if (size === 'small') return ['17px', '13px', '15px']
+    else if (size === 'medium' || !size) return ['20px', '16px', '18px']
+    else if (size === 'large') return ['24px', '18px', '22px']
+    else return ''
   }
 
   return (
@@ -61,8 +46,12 @@ function Anchor(
       {...props}
     >
       {Extra && Extra.Content ? (
-        <styled.IconHolder position={Extra.position}>
-          <Extra.Content />
+        <styled.IconHolder position={Extra.position} size={getSize()[2]}>
+          {Extra.Content.includes('svg') ? (
+            <object data={Extra.Content}></object>
+          ) : (
+            <img src={Extra.Content} />
+          )}
         </styled.IconHolder>
       ) : (
         ''

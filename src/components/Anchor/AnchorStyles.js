@@ -42,10 +42,14 @@ const IconHolder = styled.div`
   position: absolute;
   ${(props) => (props.position === 'right' ? 'right: 0;' : 'left: 0')};
   display: flex;
-  max-width: 24px;
+  width: ${(props) => props.size};
   height: 100%;
   align-items: center;
   justify-content: center;
+  & > img,
+  object {
+    width: 100%;
+  }
 `
 
 export { AnchorStyled, IconHolder, Text }
