@@ -7,21 +7,28 @@
 ## Install
 
 ```bash
+# Install fresh-breath for React project
 npm install --save fresh-breath
 ```
 
-## Usage
+## Quickstart
 
 ```jsx
 import React from 'react'
 
-import { MyComponent } from 'fresh-breath'
+import { Button } from 'fresh-breath'
 
 const Example = () => {
-  return <MyComponent />
+  return <Button>Click me!</Button>
 }
 ```
 
+#### Components
+
+Component | Props | Desciption | Type | Default
+--- | --- | --- | --- | --- |
+`Anchor` | color<br />hover<br />underline<br />Extra<br /><br /><br />size | can be set to any supported CSS value e.g. #fff<br />adds animation on mouse hover<br />adds a line under anchor on hover<br />object with `Content` and `position` keys which<br />adds an icon near the anchor, first is icon path<br />and second can be to either `left` or `right`<br />can be set to `large`/`medium`/`small` | string<br />boolean<br />boolean<br />object<br /><br /><br />string | -<br />false<br />false<br />-<br /><br /><br />medium
+
 ## License
 
-MIT © [Yerassyl Kurmangali](https://github.com/GhoulIsReal)
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
