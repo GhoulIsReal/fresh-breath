@@ -6,6 +6,7 @@ const Flex = styled.div`
   flex-flow: ${(props) => props.direction || 'row'};
   align-items: ${(props) => props.align || 'center'};
   justify-content: ${(props) => props.justify || 'center'};
+  flex-wrap: ${(props) => (props.wrap ? 'wrap' : 'nowrap')};
 `
 
 export { Flex }
