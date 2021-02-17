@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const SearchHolder = styled.div`
-  width: ${(props) => (props.width ? props.width : '380px')};
+  width: ${(props) => (props.width ? props.width + 'px' : '380px')};
   position: relative;
 `
 
 const Input = styled.input`
-  width: ${(props) => (props.width ? props.width - '70px' : '310px')};
+  width: ${(props) => (props.width ? (props.width - 70) + 'px' : '310px')};
   line-height: 30px;
   font-size: 15px;
   padding: 0 35px;
