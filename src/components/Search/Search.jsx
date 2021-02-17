@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react'
 import * as styled from './SearchStyles'
 
-const Search = ({ width, input: value, onChange: setValue, submit }, ref) => {
+const Search = (
+  { width, input: value, onChange: setValue, submit, placeholder },
+  ref
+) => {
   const [selected, setSelected] = useState(false)
   const input = useRef(null)
 
@@ -49,7 +52,8 @@ const Search = ({ width, input: value, onChange: setValue, submit }, ref) => {
         onFocus={() => setSelected(true)}
         onBlur={() => setSelected(false)}
         fill={selected ? 1 : 0}
-        placeholder='Search...'
+        width={width}
+        placeholder={placeholder ? placeholder : 'Search...'}
       ></styled.Input>
       {value && value.length > 0 ? (
         <styled.IconHolder onClick={searchClear} style={{ right: 0 }}>
