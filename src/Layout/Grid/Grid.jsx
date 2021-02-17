@@ -1,9 +1,15 @@
 import React from 'react'
 import * as styled from './GridStyles'
 
-function Grid({ children, evenly, gap, justify, style }) {
+function Grid({ children, evenly, gap, justify, cols, style }) {
   return (
-    <styled.Grid style={style} evenly={evenly} gap={gap} justify={justify}>
+    <styled.Grid
+      style={style}
+      evenly={evenly}
+      gap={gap}
+      justify={justify}
+      cols={cols}
+    >
       {children}
     </styled.Grid>
   )

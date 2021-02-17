@@ -1,7 +1,7 @@
 import React from 'react'
 import * as styled from './FlexStyles'
 
-function Flex({ children, direction, align, justify, wrap }, ref) {
+function Flex({ children, direction, align, justify, wrap, style }, ref) {
   return (
     <styled.Flex
       ref={ref}
@@ -9,6 +9,7 @@ function Flex({ children, direction, align, justify, wrap }, ref) {
       direction={direction}
       align={align}
       justify={justify}
+      style={style}
     >
       {children}
     </styled.Flex>

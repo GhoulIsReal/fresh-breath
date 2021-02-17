@@ -96,6 +96,7 @@ Represents grid layout
 | gap        | sets gap between grid items         | string | 1rem |
 | evenly      | makes all grid items same width, can be also<br>be a value which specifies items minimal width | boolean<br>string  | 300px |  
 | justify    | same as flex's `justify` prop       | string | - |
+| cols       | sets grid's column number           | number | 4 |
 
 #### Table
 
